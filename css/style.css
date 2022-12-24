@@ -1,0 +1,64 @@
+body {
+    
+    margin: 0;
+    padding: 0;
+    
+    padding-top: 30px;
+}
+
+    .navbar-heads{
+
+        height: 100%;
+        width: 100%;
+        position: fixed;
+        border-bottom: 1px solid #ccc;
+    }
+    nav#my-navbar.navbar {
+
+        background-color: beige;
+    }
+#container {
+            background-color: beige;
+
+    
+}
+.logo {
+    
+    float: left;
+}
+.small {height:40px;}
+* {
+    
+    box-sizing: border-box;
+}
+
+html, body {margin: 0;}
+
+div#rowboutme
+{
+
+}
+
+#mypp {    display: inline-block;
+    
+            margin-top: 50px;
+            margin-left: 50px;
+            margin-bottom: 50px;
+}
+
+#myphoto {   
+    display: inline-block;
+
+    
+      margin-top: 20px;
+      margin-left:100px;
+}
+
+p#aboutme
+
+{
+    margin-top: 20px;
+      margin-left:100px;
+    
+}
+

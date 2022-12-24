@@ -1,0 +1,280 @@
+@import "config";
+@import "menu";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  @include background();
+  @include background2();
+  height: 100%;
+  background: $primary-color;
+  color: set-text-color($primary-color);
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif, "Kirang Haerang",
+    cursive;
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-weight: 400;
+  &.lg-heading {
+    font-size: 6rem;
+  }
+
+  &.sm-heading {
+    margin-bottom: 2rem;
+    padding: 0.2rem 1rem;
+    background: rgba(lighten($color: $primary-color, $amount: 02), 1);
+  }
+}
+.bg-txt {
+  margin-bottom: 2rem;
+  padding: 0.2rem 1rem;
+  background: $secondary-color;
+}
+a {
+  color: white;
+  text-decoration: none;
+}
+
+header {
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+}
+.text-secondary {
+  color: $secondary-color;
+}
+main {
+  padding: 4rem;
+  //height: 100%;
+  min-height: calc(100vh - 60px);
+
+  .icons {
+    margin-top: 1rem;
+    a {
+      padding: 0.4rem;
+      &:hover {
+        color: $secondary-color;
+        transition: all 1.5s ease-out;
+        @include easeOut();
+      }
+    }
+  }
+  &#home {
+    overflow: hidden;
+    h1 {
+      margin-top: 20vh;
+    }
+  }
+}
+
+.about-bio {
+  display: grid;
+  grid-gap: 30px;
+  grid-template-areas:
+    "tit tit tit"
+    "bioimage bio bio";
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.about-education {
+  margin-top: 20px;
+  display: grid;
+  grid-gap: 30px;
+  grid-template-areas:
+    "tit1 tit1 tit1"
+    "education1 education2 education3";
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.about-skill {
+  margin-top: 20px;
+  display: grid;
+  grid-gap: 30px;
+  grid-template-areas:
+    "tit2 tit2 tit2"
+    "skill1 skill2 skill3";
+  grid-template-columns: repeat(3, 1fr);
+}
+.about-interest {
+  margin-top: 20px;
+  display: grid;
+  grid-gap: 30px;
+  grid-template-areas:
+    "tit3"
+    "interest1";
+  grid-template-columns: repeat(1, 1fr);
+}
+.skill .skillbox {
+  box-sizing: border-box;
+  width: 100%;
+  margin: 20px 0;
+  p {
+    text-transform: uppercase;
+    margin: 0 0 10px;
+    padding: 0;
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+  p:nth-child(2) {
+    top: -25px;
+    color: $secondary-color;
+    font-size: 8px;
+    font-weight: lighter;
+  }
+  p:nth-child(3) {
+    font-size: 8px;
+    font-weight: lighter;
+  }
+  .skl {
+    background: #262626;
+    padding: 4px;
+    box-sizing: border-box;
+    border: 1px solid $secondary-color;
+    border-radius: 2px;
+    .skill-level {
+      background: $secondary-color;
+      width: 100%;
+      height: 10px;
+    }
+  }
+}
+.interest p {
+  text-align: left;
+  font-size: 20px;
+  font-weight: lighter;
+}
+.bio-image {
+  grid-area: bioimage;
+  margin: auto;
+  border-radius: 50%;
+  border: $secondary-color solid 3px;
+}
+
+.bio {
+  grid-area: bio;
+  font-weight: lighter;
+  font-size: 1.2rem;
+  line-height: 1.4;
+  font-family: "Ubuntu Condensed", sans-serif;
+}
+.tit1 {
+  grid-area: tit1;
+}
+.tit {
+  grid-area: tit;
+}
+.tit3 {
+  margin-top: 15px;
+
+  grid-area: tit3;
+}
+.interest1 {
+  grid-area: interest1;
+}
+.education1 {
+  grid-area: education1;
+}
+.education2 {
+  grid-area: education2;
+}
+.education3 {
+  grid-area: education3;
+}
+.tit2 {
+  grid-area: tit2;
+}
+.skill1 {
+  grid-area: skill1;
+}
+
+.skill2 {
+  grid-area: skill2;
+}
+.skill3 {
+  grid-area: skill3;
+}
+.interest {
+  background: lighten($color: $primary-color, $amount: 05);
+  padding: 0.5rem;
+  border-bottom: $secondary-color 5px solid;
+  text-align: center;
+  font-size: 11px;
+  line-height: 1.9;
+}
+.education {
+  background: lighten($color: $primary-color, $amount: 05);
+  padding: 0.5rem;
+  border-bottom: $secondary-color 5px solid;
+  text-align: center;
+  font-size: 11px;
+  line-height: 1.9;
+}
+.skill {
+  background: lighten($color: $secondary-color, $amount: 05);
+  padding: 20px;
+  border-bottom: $secondary-color 5px solid;
+  font-size: 11px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, $alpha: 0.5);
+}
+
+.projects {
+  display: grid;
+  grid-gap: 0.7rem;
+  grid-template-columns: repeat(3, 1fr);
+
+  img {
+    width: 100%;
+    border: 3px solid white;
+
+    &:hover {
+      opacity: 0.5;
+      border-color: $secondary-color;
+      @include easeOut;
+    }
+  }
+}
+
+.btn {
+  display: block;
+  padding: 0.5rem 1rem;
+  border: 0;
+  margin-bottom: 0.3rem;
+
+  &:hover {
+    background: $secondary-color;
+    color: set-text-color($secondary-color);
+  }
+}
+.btn-light {
+  @extend .btn;
+  font-weight: lighter;
+  background: lighten($color: $primary-color, $amount: 10);
+
+  color: white;
+  i {
+    margin-right: 5px;
+  }
+  p {
+    margin-left: 15px;
+  }
+}
+.text-bold {
+  font-weight: bold;
+}
+
+#main-footer {
+  text-align: center;
+  padding: 1rem;
+  background: darken($color: $primary-color, $amount: 10);
+  color: set-text-color($primary-color);
+  height: 60px;
+}
+@import "mobile";
+@import url("https://fonts.googleapis.com/css?family=Ubuntu+Condensed");
